@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const product = document.getElementById("SelectProduct").value;
         const quantity = document.getElementById("Quantity").value;
         const paymentType = document.querySelector('input[name="PaymentType"]:checked').value;
+        const paymentLabel = paymentType ? paymentType.parentElement.textContent.trim() : null;
 
         outputDiv.innerHTML = `
             <h4>Order Summary</h4>
@@ -21,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <p><strong>Email:</strong> ${email}</p>
             <p><strong>Product:</strong> ${product}</p>
             <p><strong>Quantity:</strong> ${quantity}</p>
-            <p><strong>Payment Method:</strong> ${paymentType}</p>
+            <p><strong>Payment Method:</strong> ${paymentLabel}</p>
         `;
 
         // Actually submit the form after showing summary
