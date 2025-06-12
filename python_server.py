@@ -30,7 +30,8 @@ class FormHandler(http.server.SimpleHTTPRequestHandler):
             )
             
             cursor = conn.cursor()
-            cursor.execute("INSERT INTO customer (name, email) VALUES (?, ?)", (name, email))
+            # cursor.execute("INSERT INTO customer (name, email) VALUES (?, ?)", (name, email))
+            cursor.execute("INSERT INTO customer (id, name, email) VALUES (?, ?)", ("1", "Chris", "cmatchett@belfastmet.ac.uk"))
             conn.commit()
             conn.close()
             
