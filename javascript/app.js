@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const email = document.getElementById("EmailAddress").value;
         const product = document.getElementById("SelectProduct").value;
         const quantity = document.getElementById("Quantity").value;
-        const paymentType = document.querySelector('input[name="PaymentType"]:checked').value;
+        const paymentType = document.querySelector('input[name="PaymentType"]:checked');
         const paymentLabel = paymentType ? paymentType.parentElement.textContent.trim() : null;
 
         outputDiv.innerHTML = `
